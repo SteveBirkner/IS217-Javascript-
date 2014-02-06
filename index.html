@@ -12,6 +12,20 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+        <script>
+          window.onload = function() {
+            var links = document.getElementsByTagName("a");
+            for ( var i = 0; i < links.length; i++ ) {
+              if ( links[i].title ) {
+                var date = prettyDate("2008-01-28T22:25:00Z",
+                  links[i].title);
+                if ( date ) {
+                  links[i].innerHTML = date;
+                }
+              }
+            }
+          };
+        </script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> --> 
         
     </head>
