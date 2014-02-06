@@ -1,12 +1,12 @@
-function prettyDate(time){
+function prettyDate(now, time){
     var date = new Date(time || ""),
-      diff = (((new Date()).getTime() - date.getTime()) / 1000),
+      diff = (((new Date(now)).getTime() - date.getTime()) / 1000),
       day_diff = Math.floor(diff / 86400);
 
     if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
       return;
 
-  return day_diff === 0 && (
+    return day_diff === 0 && (
         diff < 60 && "just now" ||
         diff < 120 && "1 minute ago" ||
         diff < 3600 && Math.floor( diff / 60 ) +
@@ -23,7 +23,8 @@ function prettyDate(time){
     var links = document.getElementsByTagName("a");
     for ( var i = 0; i < links.length; i++ ) {
       if ( links[i].title ) {
-        var date = prettyDate(links[i].title);
+        var date = prettyDate("2008-01-28T22:25:00Z",
+          links[i].title);
         if ( date ) {
           links[i].innerHTML = date;
         }
