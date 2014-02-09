@@ -32,5 +32,7 @@ test("prettydate.format", function() {
       equal(add(x,y),ans);
     }
     adds(3,4,7);
+    adds(5,6,11);
+    adds(5,5,11); //meant to intentionally add wrong numbers 
 
   });
