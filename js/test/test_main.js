@@ -10,7 +10,7 @@ test("prettydate.format", function() {
     date("2008/01/26 22:23:30", "2 days ago");
     date("2007/01/26 22:23:30", undefined);
   });
- 
+
   function domtest(name, now, first, second) {
     test(name, function() {
       var links = document.getElementById("qunit-fixture")
@@ -26,3 +26,11 @@ test("prettydate.format", function() {
     "2 hours ago", "Yesterday");
   domtest("prettyDate.update, one day later", "2008/01/29 22:25:00",
     "Yesterday", "2 days ago");
+
+  test("add", function() {
+    function adds(x,y,ans) {
+      equal(add(x,y),ans);
+    }
+    adds(3,4,7);
+
+  });

@@ -33,3 +33,7 @@ var prettyDate = {
     }
   }
 };
+
+function add(x,y) {
+  return x + y;
+}
