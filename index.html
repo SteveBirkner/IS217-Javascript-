@@ -12,17 +12,17 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="js/vendor/qunit/qunit.css">
+        <link rel="stylesheet" href="css/foundation/css/foundation.min.css">
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
         <script src="js/vendor/qunit/qunit.js"></script>
-
-       
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> --> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
         
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+      
         <div id="qunit"></div>
         <div id="qunit-fixture">
          
@@ -51,20 +51,15 @@
              
         </div>
 
-        <ul>
-          <li class="entry">
-            <p>blah blah blah...</p>
-            <small class="extra">
-              Posted <span class="time">
-                <a href="/2008/01/blah/57/" title="2008-01-28T20:24:17Z">
-                  <span>January 28th, 2008</span>
-                </a>
-              </span>
-              by <span class="author"><a href="/john/">John Resig</a></span>
-            </small>
-          </li>
-          <!-- more list items -->
-        </ul>
+      <p>Messing with Angular</p> 
+
+      <div ng-app="">
+        <input type="text" ng-model="data.message">
+        {{data.message}}
+        <div class="{{data.message}}">
+          wrap me up in foundation class.
+        </div>
+      </div>
 
 
 
