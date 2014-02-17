@@ -33,6 +33,17 @@ test("prettydate.format", function() {
     }
     adds(3,4,7);
     adds(5,6,11);
-    adds(5,5,10); 
+    adds(5,5,10);
 
   });
+
+  test("Object Creation", function() {
+    function create(obj,key,val) {
+      equal(defineProp(obj,key,val),val);
+    }
+
+    create(person,"name","steve");
+
+  });
+
+

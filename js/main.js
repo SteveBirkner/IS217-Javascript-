@@ -41,18 +41,28 @@ function add(x,y) {
 //Design pattern things below
 
 
-var newObject = {};
 
-Object.defineProperty(newObject, "someKey", {
-  value: "Stuff here",
-  writable: true,
-  enumerable: true,
-  configurable: true
 
-});
+var defineProp = function(obj,key,val) {
+  var config = {
+    value: val,
+    writable: true,
+    enumerable: true,
+    configurable: true
+  };
+  Object.defineProperty(obj,key,config);
+  return val;
+};
 
-var val = newObject.someKey;
+var person = Object.create(Object.prototype);
 
-console.log(val);
+
+defineProp(person,"car","BRZ");
+defineProp(person,"name","Steve");
+
+console.log(person);
+
+
+
 
 
