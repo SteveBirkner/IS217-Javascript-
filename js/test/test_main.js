@@ -37,13 +37,6 @@ test("prettydate.format", function() {
 
   });
 
-  test("Object Creation", function() {
-    function create(obj,key,val) {
-      equal(defineProp(obj,key,val),val);
-    }
 
-    create(person,"name","steve");
-
-  });
 
 

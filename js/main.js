@@ -41,26 +41,19 @@ function add(x,y) {
 //Design pattern things below
 
 
+function Car(model,year,miles) {
+  this.model = model;
+  this.year = year;
+  this.miles = miles;
 
-
-var defineProp = function(obj,key,val) {
-  var config = {
-    value: val,
-    writable: true,
-    enumerable: true,
-    configurable: true
+  this.toString = function() {
+    return "This" + this.year + " " + this.model + " has traveled " + this.miles;
   };
-  Object.defineProperty(obj,key,config);
-  return val;
-};
+}
 
-var person = Object.create(Object.prototype);
+var lumina = new Car("Chevy Lumina",1998,162000);
 
-
-defineProp(person,"car","BRZ");
-defineProp(person,"name","Steve");
-
-console.log(person);
+console.log(lumina.toString());
 
 
 
