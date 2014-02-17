@@ -37,6 +37,19 @@ test("prettydate.format", function() {
 
   });
 
+test("Car Constructor", function(){
+  function cc(model,year,miles) {
+    var testCar = new Car(model,year, miles);
+    equal(testCar.model,model);
+    equal(testCar.year,year);
+    equal(testCar.miles,miles);
+
+  }
+
+  cc("lumina",1997,162000);
+
+});
+
 test("Singleton", function() {
   function sing() {
     var singleA = mySingleton.getInstance();

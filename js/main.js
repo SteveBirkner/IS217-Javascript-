@@ -51,9 +51,8 @@ function Car(model,year,miles) {
   };
 }
 
-var lumina = new Car("Chevy Lumina",1998,162000);
 
-console.log(lumina.toString());
+
 
 
 var mySingleton = (function () {
