@@ -43,7 +43,13 @@ function add(x,y) {
 
 var newObject = {};
 
-newObject.someKey = "Hello!";
+Object.defineProperty(newObject, "someKey", {
+  value: "Stuff here",
+  writable: true,
+  enumerable: true,
+  configurable: true
+
+});
 
 var val = newObject.someKey;
 
