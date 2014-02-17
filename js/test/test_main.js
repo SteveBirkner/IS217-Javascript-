@@ -37,6 +37,15 @@ test("prettydate.format", function() {
 
   });
 
+test("Singleton", function() {
+  function sing() {
+    var singleA = mySingleton.getInstance();
+    var singleB = mySingleton.getInstance();
+    equal(singleA,singleB);
+  }
 
+  sing();
+
+});
 
 

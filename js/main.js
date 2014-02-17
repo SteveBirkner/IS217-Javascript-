@@ -105,10 +105,7 @@ var mySingleton = (function () {
     }
 
   };
-  
+
 })();
 
-var singleA = mySingleton.getInstance();
-var singleB = mySingleton.getInstance();
-console.log( singleA.getRandomNumber() === singleB.getRandomNumber() );
 
