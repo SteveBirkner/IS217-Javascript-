@@ -37,3 +37,16 @@ var prettyDate = {
 function add(x,y) {
   return x + y;
 }
+
+//Design pattern things below
+
+
+var newObject = {};
+
+newObject.someKey = "Hello!";
+
+var val = newObject.someKey;
+
+console.log(val);
+
+
