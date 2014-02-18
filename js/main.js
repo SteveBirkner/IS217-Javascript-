@@ -159,15 +159,6 @@ function insure(macbook) {
 }
 
 
-var macbook = new MacBook();
-
-memory(macbook);
-engraving(macbook);
-insure(macbook);
-
-console.log(macbook.cost());
-console.log(macbook.screenSize());
-
 
 
 

@@ -70,7 +70,18 @@ test("Vechile Decorator", function() {
 test("Truck Decorator",function() {
 
   truck.setModel("F-150");
-  truck.setColor("Silver")
+  truck.setColor("Silver");
   equal(truck.model,"F-150");
   equal(truck.color,"Silver");
+});
+
+test("MacBook", function() {
+  var macbook = new MacBook();
+
+  memory(macbook);
+  engraving(macbook);
+  insure(macbook);
+
+  equal(macbook.cost(),1522);
+  equal(macbook.screenSize(),11.6);
 });
