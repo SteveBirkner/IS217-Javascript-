@@ -47,18 +47,30 @@ test("Car Constructor", function(){
   }
 
   cc("lumina",1997,162000);
+  cc("Tesla",2014,150);
 
 });
 
 test("Singleton", function() {
-  function sing() {
+
     var singleA = mySingleton.getInstance();
     var singleB = mySingleton.getInstance();
     equal(singleA,singleB);
-  }
 
-  sing();
 
 });
 
+test("Vechile Decorator", function() {
+  var testInst = new vechile();
+  equal(testInst.vechileType,"car");
+  equal(testInst.model,"default");
+  equal(testInst.license,"00000-000");
+});
 
+test("Truck Decorator",function() {
+
+  truck.setModel("F-150");
+  truck.setColor("Silver")
+  equal(truck.model,"F-150");
+  equal(truck.color,"Silver");
+});

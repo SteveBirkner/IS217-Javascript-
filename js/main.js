@@ -115,27 +115,20 @@ function vechile(vechileType) {
   this.model = "default";
   this.license = "00000-000";
 
+
 }
 
-var testInst = new vechile("car");
-
-console.log(testInst);
-
-var truck = new vechile("truck");
 
 //decorators, making trucks hae colors and models
-truck.setModel = function(modelName) {
-  truck.model = modelName;
-};
 
+var truck = new vechile("truck");
+truck.setModel = function(modelName) {
+    truck.model = modelName;
+};
 truck.setColor = function(color) {
   truck.color = color;
 };
 
-truck.setColor("blue");
-truck.setModel("F-150");
-
-console.log(truck);
 
 
 function MacBook() {
