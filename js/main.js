@@ -40,7 +40,7 @@ function add(x,y) {
 
 //Design pattern things below
 
-
+//constructor
 function Car(model,year,miles) {
   this.model = model;
   this.year = year;
@@ -53,7 +53,7 @@ function Car(model,year,miles) {
 
 
 
-
+//singleton
 
 var mySingleton = (function () {
 
@@ -106,5 +106,42 @@ var mySingleton = (function () {
   };
 
 })();
+
+//Decorator
+
+function vechile(vechileType) {
+
+  this.vechileType = vechileType || "car";
+  this.model = "default";
+  this.license = "00000-000";
+
+}
+
+var testInst = new vechile("car");
+
+console.log(testInst);
+
+var truck = new vechile("truck");
+
+//decorators, making trucks hae colors and models
+truck.setModel = function(modelName) {
+  truck.model = modelName;
+};
+
+truck.setColor = function(color) {
+  truck.color = color;
+};
+
+truck.setColor("blue");
+truck.setModel("F-150");
+
+console.log(truck);
+
+
+
+
+
+
+
 
 
