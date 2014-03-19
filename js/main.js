@@ -1,44 +1,49 @@
-//constructor
-function Car(model,year,miles) {
-  this.model = model;
-  this.year = year;
-  this.miles = miles;
+//constructor, Creational
+function Phone() {
+  this.model = "default";
+  this.year = "0000";
+  this.storage = "0GB";
 
-  this.toString = function() {
-    return "This " + this.year + " " + this.model + " has traveled " + this.miles;
-  };
 }
 
 
+//Decorator, Structural
 
-//singleton
 
-var mySingleton = (function () {
+var cellPhone = new Phone();
+
+cellPhone.setModel = function(modelName) {
+    cellPhone.model = modelName;
+};
+
+cellPhone.setYear = function(year) {
+  cellPhone.year = year;
+};
+
+cellPhone.setStorage = function(gb) {
+  cellPhone.storage = gb;
+};
+
+
+//singleton, Creational
+
+var lteConnection = (function () {
 
   // Instance stores a reference to the Singleton
   var instance;
 
   function init() {
 
-    // Singleton
+    var lteConn = true;
 
-    // Private methods and variables
-    function privateMethod(){
-        console.log( "I am private" );
-    }
-
-    var privateVariable = "Im also private";
-
+    //this is to test the singleton works
     var privateRandomNumber = Math.random();
 
     return {
 
-      // Public methods and variables
-      publicMethod: function () {
-        console.log( "The public can see me!" );
+      connStatus: function () {
+        return lteConn;
       },
-
-      publicProperty: "I am also public",
 
       getRandomNumber: function() {
         return privateRandomNumber;
@@ -49,8 +54,6 @@ var mySingleton = (function () {
   }
   return {
 
-    // Get the Singleton instance if one exists
-    // or create one if it doesn't
     getInstance: function () {
 
       if ( !instance ) {
@@ -63,54 +66,3 @@ var mySingleton = (function () {
   };
 
 })();
-
-//Decorator
-
-function vechile(vechileType) {
-
-  this.vechileType = vechileType || "car";
-  this.model = "default";
-  this.license = "00000-000";
-
-
-}
-
-
-//decorators, making trucks hae colors and models
-
-var truck = new vechile("truck");
-truck.setModel = function(modelName) {
-    truck.model = modelName;
-};
-truck.setColor = function(color) {
-  truck.color = color;
-};
-
-
-
-function MacBook() {
-  this.cost = function () {return 997;};
-  this.screenSize = function () {return 11.6;};
-
-}
-
-function memory(macbook) {
-  var v = macbook.cost();
-  macbook.cost = function () {
-    return v + 75;
-  };
-}
-
-function engraving(macbook) {
-  var v = macbook.cost();
-  macbook.cost = function () {
-    return v + 200;
-  };
-}
-
-function insure(macbook) {
-  var v = macbook.cost();
-  macbook.cost = function () {
-    return v + 250;
-  };
-}

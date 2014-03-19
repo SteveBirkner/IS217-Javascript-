@@ -1,48 +1,34 @@
-test("Car Constructor", function(){
-  function cc(model,year,miles) {
-    var testCar = new Car(model,year, miles);
-    equal(testCar.model,model);
-    equal(testCar.year,year);
-    equal(testCar.miles,miles);
+test("Phone Default Constructor Test", function(){
+  function phoneDefault() {
+    var testPhone = new Phone();
+    equal(testPhone.model,"default");
+    equal(testPhone.year,"0000");
+    equal(testPhone.storage,"0GB");
 
   }
+  phoneDefault();
 
-  cc("lumina",1997,162000);
-  cc("Tesla",2014,150);
 
 });
 
-test("Singleton", function() {
+test("Singleton: lteConnection", function() {
 
-    var singleA = mySingleton.getInstance();
-    var singleB = mySingleton.getInstance();
+    var singleA = lteConnection.getInstance();
+    var singleB = lteConnection.getInstance();
     equal(singleA,singleB);
 
 
 });
 
-test("Vechile Decorator", function() {
-  var testInst = new vechile();
-  equal(testInst.vechileType,"car");
-  equal(testInst.model,"default");
-  equal(testInst.license,"00000-000");
+test("Cell Phone Decorator", function() {
+  cellPhone.setModel("iPhone");
+  cellPhone.setYear("2014");
+  cellPhone.setStorage("32GB");
+
+
+  equal(cellPhone.model,"iPhone");
+  equal(cellPhone.year,"2014");
+  equal(cellPhone.storage,"32GB");
+
 });
 
-test("Truck Decorator",function() {
-
-  truck.setModel("F-150");
-  truck.setColor("Silver");
-  equal(truck.model,"F-150");
-  equal(truck.color,"Silver");
-});
-
-test("MacBook", function() {
-  var macbook = new MacBook();
-
-  memory(macbook);
-  engraving(macbook);
-  insure(macbook);
-
-  equal(macbook.cost(),1522);
-  equal(macbook.screenSize(),11.6);
-});
