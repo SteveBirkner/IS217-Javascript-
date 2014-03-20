@@ -24,6 +24,11 @@ cellPhone.setStorage = function(gb) {
   cellPhone.storage = gb;
 };
 
+//iterator, behavioral 
+
+$.each(["OSX","Windows","Linux"], function(index, value) {
+  $(".iter").append("<li>" + value + "</li>");
+});
 
 //singleton, Creational
 

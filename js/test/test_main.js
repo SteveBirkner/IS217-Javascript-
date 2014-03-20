@@ -32,3 +32,10 @@ test("Cell Phone Decorator", function() {
 
 });
 
+test("Iterator", function() {
+  var list = ["OSX","Windows","Linux"];
+  var ul = document.getElementsByTagName("li");
+  for (var i = 0; i < 3; i++) {
+    equal(ul[i].innerHTML,list[i]);
+  }
+});
