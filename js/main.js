@@ -30,11 +30,14 @@ $.each(["OSX","Windows","Linux"], function(index, value) {
   $(".iter").append("<li>" + value + "</li>");
 });
 
+//composite, structural 
+
+$("li").addClass("active"); //changes all li's to an active class
+
 //singleton, Creational
 
 var lteConnection = (function () {
 
-  // Instance stores a reference to the Singleton
   var instance;
 
   function init() {

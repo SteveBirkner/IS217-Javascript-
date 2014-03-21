@@ -39,3 +39,13 @@ test("Iterator", function() {
     equal(ul[i].innerHTML,list[i]);
   }
 });
+
+test("Composite", function() {
+  var li = document.getElementsByTagName("li");
+  var active = document.getElementsByClassName("active");
+
+  for (var i =0; i < 3; i++) {
+    equal(li[i],active[i]);
+  }
+
+});
