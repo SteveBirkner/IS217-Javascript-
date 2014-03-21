@@ -34,6 +34,13 @@ $.each(["OSX","Windows","Linux"], function(index, value) {
 
 $("li").addClass("active"); //changes all li's to an active class
 
+//Observer, behavioral 
+
+$(document).on("ready", function() {
+  var p = document.getElementById("obs");
+  p.innerHTML = "brought to you by the Observer pattern and .on() function";
+});
+
 //singleton, Creational
 
 var lteConnection = (function () {

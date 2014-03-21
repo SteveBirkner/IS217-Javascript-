@@ -49,3 +49,14 @@ test("Composite", function() {
   }
 
 });
+
+test("Observer", function() {
+  equal(true,testOb());
+  function testOb() {
+    var p = document.getElementById("obs");
+    if (p.innerHTML == "brought to you by the Observer pattern and .on() function") {
+      return true;
+    }
+    return false;
+  }
+});
